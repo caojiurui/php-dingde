@@ -1,0 +1,51 @@
+
+<section class="tem_index_footer">
+    <div class="tem_inner">
+        <div class="nav_bar">
+            <div class="met_fl contact_info">
+                <dt><span>海宁泰尔欣新材料有限公司</span></dt>
+                <dd>
+                    <p>海宁泰尔欣新材料有限公司位于海宁尖山新区，主要从事导电纤维、导电纱线产品的研发、生产和销售。坚持“以质量求生存，以信誉求发展”的企业理念。欢迎来电咨询、洽谈及研发合作！
+                        <meta name="baidu-site-verification" content="hkriw5CX9g">
+                    </p>
+                </dd>
+            </div>
+            <div class="nav met_fr">
+                {foreach $navbar as $key=>$nav}
+                    {if($nav['key'] != 'index')}
+                    <dl>
+                        <div class="bar">
+                            <dt><a href="{$nav['href']}"  title="{$nav['name']}"><span>{$nav['name']}</span></a></dt>
+                            {notempty name="$nav['children']"}
+                            <dd>
+                                <ul>
+                                    {foreach $nav['children'] as $key=>$child}
+                                    <li>
+                                        <a href="{$child['href']}" title="{$child['name']}"><span>{$child['name']}</span></a>
+                                    </li>
+                                    {/foreach}
+                                </ul>
+                            </dd>
+                            {/notempty}
+                        </div>
+                    </dl>
+                    {/if}
+                {/foreach}
+            </div>
+        </div>
+        <div class="met_clear"></div>
+    </div>
+</section>
+
+<footer class="tem_footer">
+    <section class="tem_inner">
+        <div class="tem_footer_text">
+            COPYRIGHT (©) 2019 海宁泰尔欣新材料有限公司-导电纤维 导电纱线
+            <a href="http://www.beian.miit.gov.cn/" target="_blank"
+               rel="nofollow">&nbsp;&nbsp;&nbsp;浙ICP备19038534号-1</a>
+            <span style="display: inline-block;margin-left:10px;">
+                Powered by <a href="http://www.mituo.cn" style="margin-left:0;">Metinfo</a>
+            </span>
+        </div>
+    </section>
+</footer>
