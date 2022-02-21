@@ -26,7 +26,7 @@ class IndexBaseController extends BaseController
     {
         // 赋值后台变量
         $this->assign([
-            'navbar' => $this->navbar
+            'navbar' => $this->navbar,
         ]);
         return $this->view->fetch($template, $vars);
     }
@@ -43,12 +43,12 @@ class IndexBaseController extends BaseController
             'href' => '/index/about',
             'children' => [
                 [
-                    'key' => 'index/about',
+                    'key' => 'about',
                     'name' => '公司简介',
                     'href' => '/index/about',
                 ],
                 [
-                    'key' => 'index/about/about2',
+                    'key' => 'about/about2',
                     'name' => '企业文化',
                     'href' => '/index/about/about2',
                 ]
@@ -59,12 +59,12 @@ class IndexBaseController extends BaseController
             'href' => '/index/product',
             'children' => [
                 [
-                    'key' => 'index/product',
+                    'key' => 'product',
                     'name' => '导电纱线 长丝',
                     'href' => '/index/product',
                 ],
                 [
-                    'key' => 'index/product/product2',
+                    'key' => 'product/product2',
                     'name' => '复合纱',
                     'href' => '/index/product/product2',
                 ]
@@ -75,12 +75,12 @@ class IndexBaseController extends BaseController
             'href' => '/index/laboratory',
             'children' => [
                 [
-                    'key' => 'index/laboratory',
+                    'key' => 'laboratory',
                     'name' => '实验室',
                     'href' => '/index/laboratory',
                 ],
                 [
-                    'key' => 'index/laboratory/reports',
+                    'key' => 'laboratory/reports',
                     'name' => '实验报告',
                     'href' => '/index/laboratory/reports',
                 ]

@@ -1,3 +1,6 @@
+<div class="tem_banner">
+    <div class="flash"><img src='[imgUrl]' width='980' alt='' height='400'></div>
+</div>
 <section class="met_section_head qimi_section_head">
     <div class="met_section qimi_section">
 			<span class="fa-stack fa-lg">
@@ -5,12 +8,20 @@
 			  	<i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
 			</span>
         <span class="nav-color">您的位置：</span>&nbsp;&nbsp;
-        <a class="index" href="/index/index" title="首页">首页</a> &gt;
+        <a href="__STATIC__/index.html" title="首页">首页</a> &gt;
         <span class="nav-color">
-            <a id="nav1"></a> &gt;
-            <a id="nav2"></a>
+            {foreach $navbar as $key=>$item}
+                {eq name="$item['key']" value="$nav1"}
+                    <a href="{$item['href']}">{$item['name']}</a>
+                    {notempty name="$item['children']"}
+                        {foreach $item['children'] as $key=>$child}
+                            {eq name="$child['key']" value="$pathInfo"}
+                                > <a href="{$child['href']}">{$child['name']}</a>
+                            {/eq}
+                        {/foreach}
+                    {/notempty}
+                {/eq}
+            {/foreach}
         </span>
     </div>
 </section>
-<script>
-</script>

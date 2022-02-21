@@ -1,7 +1,12 @@
-<script>
-    window.pathinfo = '{$Request.pathinfo}';
-    window.nav1 = pathinfo.includes('/') ? pathinfo.substr(0, pathinfo.indexOf('/')) : pathinfo;
-</script>
+{php}
+    $pathInfo = request()->pathinfo();
+    $nav1 = $pathInfo;
+    $nav2 = null;
+    if(strpos($pathInfo, '/')){
+        $nav1 = substr($pathInfo ,0 ,strpos($pathInfo, '/'));
+        $nav2 = substr($pathInfo ,strpos($pathInfo, '/') + 1 ,strlen($pathInfo) );
+    }
+{/php}
 <head>
     <meta charset="utf-8">
     <title>实验报告-实验检测-海宁泰尔欣新材料有限公司</title>
@@ -36,15 +41,15 @@
             </h1>
             <nav>
                 <ul>
-                    {foreach $navbar as $key=>$nav}
+                    {foreach $navbar as $key=>$item}
                     <li>
-                        <a class="{$nav['key']}" href="{$nav['href']}" title="{$nav['name']}">
-                            {$nav['name']}
+                        <a class="{$item['key']}" href="{$item['href']}" title="{$item['name']}">
+                            {$item['name']}
                         </a>
-                        {notempty name="$nav['children']"}
+                        {notempty name="$item['children']"}
                         <dl>
                             <dd>
-                                {foreach $nav['children'] as $key=>$child}
+                                {foreach $item['children'] as $key=>$child}
                                 <a class="{$child['key']}" href="{$child['href']}" title="{$child['name']}">{$child['name']}</a>
                                 {/foreach}
                                 <div class="met_clear"></div>
@@ -60,5 +65,5 @@
     <div class="met_clear"></div>
 </header>
 <script>
-    document.querySelector('a.' + (nav1 || 'index')).classList.add('navdown');
+    document.querySelector('nav a.' + ('{$nav1}' || 'index')).classList.add('navdown');
 </script>
