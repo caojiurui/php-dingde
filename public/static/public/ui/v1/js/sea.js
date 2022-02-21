@@ -71,19 +71,9 @@ var map =
 	'roundabout'		:cdn+'roundabout/2.4.2/jquery.roundabout.min',
 	/**利用css3的transition属性来进行动画操作.不支持ie9 */
 	'transit'			:cdn+'jquery.transit/0.9.12/jquery.transit.min',
+    /**懒加载 */
+    "lazysizes"            :"effects/lazysizes/lazysizes.min.js",
 }
-var ie8_js_fix = [
-	/**es5 原型方法差不多都可以使用了 */
-	'//cdn.zjystech.cn/es5-shim/4.5.9/es5-shim.min.js',
-]
-var ie8_css_fix = [
-	/**修复 ::after */
-	'packages/target',
-	/**修复 mediaqueries  */
-	// '//cdn.bootcss.com/livingston-css3-mediaqueries-js/1.0.0/css3-mediaqueries.min.js',
-	/**修复css3 圆角,阴影 */
-	'//cdn.zjystech.cn/css3pie/2.0beta1/PIE_IE678.js'
-]
 seajs.config({
 	alias:map,
 	paths:{
@@ -93,6 +83,7 @@ seajs.config({
 	},
     preload:[
         'jquery',
+        'lazysizes'
     ].concat(isIE(8)?ie8_js_fix:[])
 })
 isIE(8) && seajs.use(ie8_css_fix)

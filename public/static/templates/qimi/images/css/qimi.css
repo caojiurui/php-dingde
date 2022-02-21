@@ -125,7 +125,7 @@ header h1{display:inline;}
 .tem_banner .flex-control-nav li{margin:0px;}
 .tem_banner .flex-control-nav li a{display:inline-block;margin:0 6px;width:10px;height:10px;border:1px solid #fff;border-radius:10px;text-indent:-999em;cursor:pointer; background:none;}
 .tem_banner .flex-control-nav li a.flex-active{background:#fff;}
-.tem_banner .flash img{width:100%!important;max-height: 100%;}
+.tem_banner .flash img{width:100%!important;height: 100%;}
 .tem_index_title{margin:0 0 60px 0;text-align:center;font-weight:normal;font-size:32px;}
 .tem_index_title span{position:relative;top:2px;display:inline-block;padding:10px 0px;}
 .tem_index_title p{color:#737373;font-weight:normal;font-size: 12px;}
@@ -135,7 +135,7 @@ header h1{display:inline;}
 .tem_index_to{border-top:1px solid #e7e8ed;border-bottom:1px solid #e7e8ed;background:#f7f8fa;}
 .tem_wp1,.tem_wp2,.tem_wp3,.tem_wp4,.tem_wp5{visibility:hidden;}
 .bounceInLeft,.bounceInRight,.fadeInUp,.fadeInUpDelay,.fadeInDown,.fadeInUpD,.fadeInLeft,.fadeInRight{visibility:visible;}
-.tem_index_about{padding:0px 0 80px;height:600px;}
+.tem_index_about{padding:0px 0 80px;height:500px;}
 .tem_index_about_cont{padding-left:60px;}
 /*.tem_index_about_txt{float:left;width:55%;}
 .tem_index_about .txtwd100{float:none;width:100%;}
@@ -258,7 +258,7 @@ header h1{display:inline;}
     width: 100%;
     height:100%;
     color:#000;
-    /*display: block;*/
+    display: block;
 }
 .tem_index_aboutus li .aboutus{
     margin:0 30px;
