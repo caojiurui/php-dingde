@@ -3,6 +3,6 @@
 return [
 
     // 导航
-    \app\index\middleware\Nav::class
+    \app\index\middleware\NavView::class
 
 ];

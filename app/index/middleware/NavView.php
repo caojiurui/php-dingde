@@ -1,19 +1,24 @@
 <?php
-declare (strict_types = 1);
+declare (strict_types=1);
 
 namespace app\index\middleware;
 
-class Nav
+use think\facade\Config;
+
+class NavView
 {
     /**
      * 处理请求
      *
      * @param \think\Request $request
-     * @param \Closure       $next
+     * @param \Closure $next
      * @return Response
      */
     public function handle($request, \Closure $next)
     {
+        if (isMobile()) {   //设置手机视图
+            Config::set(['view_path' => app_path() . '/view_m/'],'view');
+        }
         return $next($request);
     }
 

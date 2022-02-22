@@ -1,0 +1,27 @@
+<aside class="am-offcanvas">
+    <div class="am-offcanvas-bar">
+        <div class="am-offcanvas-content">
+            <section class="met_aside">
+                <div class="met_aside_list">
+                    {volist name="navbar" id="item"}
+                        {eq name="$item['key']" value="$nav1"}
+                            {notempty name="$item['children']"}
+                                {volist name="$item['children']" id="child"}
+                                <dl class='list-none  {eq name="$child.key" value="$pathInfo"} navnow {/eq}'>
+                                    <dt id="part2_{classnow}" class='on'>
+                                        <a href="{$child['href']}" title="{$child['name']}" class="zm">
+                                            <span>{$child['name']}</span>
+                                        </a>
+                                    </dt>
+                                </dl>
+                                {/volist}
+                            {/notempty}
+                        {/eq}
+                    {/volist}
+                    <div class="met_clear"></div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</aside>

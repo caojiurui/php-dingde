@@ -1,0 +1,11 @@
+<footer class="tem_footer">
+    <section class="tem_inner">
+        <div class="tem_footer_nav">
+            {foreach $navbar as $key=>$nav}
+                {if($nav['key'] != 'index')}
+                <a href="{$nav['href']}" title="{$nav['name']}"><span>{$nav['name']}</span></a>
+                {/if}
+            {/foreach}
+        </div>
+    </section>
+</footer>

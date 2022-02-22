@@ -84,7 +84,7 @@ header{ position:relative; z-index:11;}
 
 .tem_index_footer{padding: 40px 10px 0px;background:#1e1e1e;}
 .tem_index_footer dl{ }
-.tem_index_footer dl dt{margin-right:25px;height:40px;border-bottom:1px solid #363636;color:#f3f3f3;font-size:16px;line-height:40px;}
+.tem_index_footer dl dt{margin-right:25px;height:40px;border-bottom:1px solid #363636;color:#f3f3f3;font-size:16px;line-height:40px;text-align: center}
 .tem_index_footer dl dt span{position:relative;top:-1px;display:inline-block;border-bottom:3px solid #838383;}
 .tem_index_footer dl dd{ padding:10px;}
 .tem_index_footer_contact li{position:relative;margin-bottom:15px;padding-top:5px;padding-left:48px;min-height:35px;color:#646363;list-style:none;}

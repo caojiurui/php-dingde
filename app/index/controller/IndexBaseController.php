@@ -16,6 +16,39 @@ class IndexBaseController extends BaseController
 {
 
     /**
+     * 视图变量
+     */
+    protected View $view;
+
+    //前端使用，可忽略
+    protected $met_module = "";
+    protected $id = "";
+
+    public function __construct()
+    {
+        $this->initialize();
+    }
+
+    // 初始化
+    protected function initialize()
+    {
+        parent::initialize();
+        // 初始化view
+        $this->view = app()->make(View::class);
+    }
+
+    /**
+     * 模板赋值
+     * @param $name
+     * @param null $value
+     * @return View
+     */
+    protected function assign($name, $value = null): View
+    {
+        return $this->view->assign($name, $value);
+    }
+
+    /**
      * 渲染模板
      * @param string $template
      * @param array $vars
@@ -27,6 +60,9 @@ class IndexBaseController extends BaseController
         // 赋值后台变量
         $this->assign([
             'navbar' => $this->navbar,
+            'lang' => 'cn',
+            'met_module' => $this->met_module,
+            'id' => $this->id,
         ]);
         return $this->view->fetch($template, $vars);
     }

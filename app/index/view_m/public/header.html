@@ -1,0 +1,28 @@
+<header>
+    <section>
+        <div class="tem_top">
+            <h1>
+                <a href="http://www.hntaierxin.com/" title="海宁泰尔欣新材料有限公司">
+                    <img src="__STATIC__/upload/201901/1547783052.jpg" alt="海宁泰尔欣新材料有限公司" title="海宁泰尔欣新材料有限公司"/>
+                </a>
+            </h1>
+            <i class="am-icon-bars"></i>
+        </div>
+    </section>
+    <div class="tem_head">
+        <nav class="am-collapse">
+            <ul>
+                {foreach $navbar as $key=>$item}
+                <li>
+                    <a class="{$item['key']}" href="{$item['href']}" title="{$item['name']}">
+                        {$item['name']}
+                    </a>
+                </li>
+                {/foreach}
+            </ul>
+        </nav>
+    </div>
+</header>
+<script>
+    document.querySelector('nav a.' + ('{$nav1}' || 'index')).classList.add('navdown');
+</script>

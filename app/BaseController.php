@@ -38,12 +38,6 @@ abstract class BaseController
     protected $middleware = [];
 
     /**
-     * 视图变量
-     * @var View
-     */
-    protected View $view;
-
-    /**
      * 构造方法
      * @access public
      * @param App $app 应用对象
@@ -60,8 +54,6 @@ abstract class BaseController
     // 初始化
     protected function initialize()
     {
-        // 初始化view
-        $this->view = app()->make(View::class);
     }
 
     /**
@@ -99,17 +91,6 @@ abstract class BaseController
         }
 
         return $v->failException(true)->check($data);
-    }
-
-    /**
-     * 模板赋值
-     * @param $name
-     * @param null $value
-     * @return View
-     */
-    protected function assign($name, $value = null): View
-    {
-        return $this->view->assign($name, $value);
     }
 
 }

@@ -24,12 +24,4 @@ return [
     'taglib_end' => '}',
     // 模板缓存
     'display_cache' => true,
-    // 字符替换
-    'tpl_replace_string' => [
-        '__DOMAIN__' => env('domain', 'http://www.dingde.vip/'),
-        '__STATIC__' => env('static_path', '/static'),
-        '__LANG__' => 'cn'
-    ],
-    //模版布局
-    'layout_on' => true, // 布局模板开关
 ];
