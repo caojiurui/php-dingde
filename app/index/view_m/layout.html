@@ -32,4 +32,16 @@
 
     {include file='public/footer' /}
     <script src="__STATIC__/public/ui/v1/js/sea.js" type="text/javascript"></script>
+
+    <script>
+        seajs.use(['jquery'], function () {
+            if($('[data-fancybox]').length){
+                seajs.use(['//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js', '//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css'], function () {
+                    $(function () {
+                        $().fancybox()
+                    })
+                })
+            }
+        })
+    </script>
 </body>

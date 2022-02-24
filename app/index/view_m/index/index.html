@@ -16,13 +16,30 @@
             <p><span style="font-family: 宋体, SimSun; font-size: 12px;">海宁泰尔欣新材料有限公司位于钱塘江北岸的海宁尖山新区，主要从事导电纤维产品的研发、生产和销售。坚持“以质量求生存，以信誉求发展”的企业理念。欢迎来电咨询、洽谈及研发合作！</span>
             </p>
             <div class="met_clear"></div>
-            <h4 class="tem_index_about_more" style="text-align: center"><a href="__STATIC__/about/m.show.php.html"
-                                                                           title="查看更多" target='_self'>查看更多</a>
+            <h4 class="tem_index_about_more" style="text-align: center">
+                <a href="/index/about" title="查看更多" target='_self'>查看更多</a>
             </h4>
         </div>
     </div>
 </section>
 
+{php}
+//转换为二维数组，每个子数组内存4个数据
+$productArray = [];
+$itemArray = [];
+foreach($productList as $key=>$item){
+    if(count($itemArray) < 4){
+        array_push($itemArray,$item);
+    }
+    if(count($itemArray) == 4){
+        array_push($productArray,$itemArray);
+        $itemArray = [];
+    }
+    if(count($productArray) == 4){
+        break;
+    }
+}
+{/php}
 <section class="tem_index_case tem_index_to">
     <div class="tem_inner">
         <h3 class="tem_index_title">
@@ -33,193 +50,28 @@
         </h3>
         <div class="am-slider am-slider-default tem_index_case_list">
             <ul class="am-slides">
-
-                <li>
-                    <dl class="tem_list">
-                        <dt><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=40" title="黑导电毛条"
-                               target='_self'><img class="lazyload"  data-src="__STATIC__/upload/201903/1553824083.jpg" title="黑导电毛条"
-                                                   alt="黑导电毛条"/></a>
-                        </dt>
-                        <dd>
-                            <h3><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=40" title="黑导电毛条"
-                                   target='_self'>黑导电毛条</a></h3>
-                        </dd>
-                    </dl>
-
-
-                    <dl class="tem_list">
-                        <dt><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=51" title="锦纶导复合纱"
-                               target='_self'><img class="lazyload"  data-src="__STATIC__/upload/201903/1553824272.jpg" title="锦纶导复合纱"
-                                                   alt="锦纶导复合纱"/></a></dt>
-                        <dd>
-                            <h3><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=51" title="锦纶导复合纱"
-                                   target='_self'>锦纶导复合纱</a></h3>
-                        </dd>
-                    </dl>
-
-
-                    <dl class="tem_list">
-                        <dt><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=49" title="导电包覆纱"
-                               target='_self'><img class="lazyload"  data-src="__STATIC__/upload/201903/1553823832.jpg" title="导电包覆纱"
-                                                   alt="导电包覆纱"/></a>
-                        </dt>
-                        <dd>
-                            <h3><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=49" title="导电包覆纱"
-                                   target='_self'>导电包覆纱</a></h3>
-                        </dd>
-                    </dl>
-
-
-                    <dl class="tem_list">
-                        <dt><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=52" title="涤纶复合纤维"
-                               target='_self'><img class="lazyload"  data-src="__STATIC__/upload/201903/1553824396.jpg" title="涤纶复合纤维"
-                                                   alt="涤纶复合纤维"/></a></dt>
-                        <dd>
-                            <h3><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=52" title="涤纶复合纤维"
-                                   target='_self'>涤纶复合纤维</a></h3>
-                        </dd>
-                    </dl>
-                </li>
-
-                <li>
-                    <dl class="tem_list">
-                        <dt><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=45" title="锦纶白导电原丝"
-                               target='_self'><img class="lazyload"  data-src="__STATIC__/upload/201903/1553823672.jpg" title="锦纶白导电原丝"
-                                                   alt="锦纶白导电原丝"/></a></dt>
-                        <dd>
-                            <h3><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=45" title="锦纶白导电原丝"
-                                   target='_self'>锦纶白导电原丝</a></h3>
-                        </dd>
-                    </dl>
-
-
-                    <dl class="tem_list">
-                        <dt><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=34" title="锦纶导电原丝"
-                               target='_self'><img class="lazyload"  data-src="__STATIC__/upload/201903/1553823685.jpg" title="锦纶导电原丝"
-                                                   alt="锦纶导电原丝"/></a></dt>
-                        <dd>
-                            <h3><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=34" title="锦纶导电原丝"
-                                   target='_self'>锦纶导电原丝</a></h3>
-                        </dd>
-                    </dl>
-
-
-                    <dl class="tem_list">
-                        <dt><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=35" title="20D3F白导电原丝"
-                               target='_self'><img class="lazyload"  data-src="__STATIC__/upload/201903/1553824121.jpg" title="20D3F白导电原丝"
-                                                   alt="20D3F白导电原丝"/></a></dt>
-                        <dd>
-                            <h3><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=35" title="20D3F白导电原丝"
-                                   target='_self'>20D3F白导电原丝</a></h3>
-                        </dd>
-                    </dl>
-
-
-                    <dl class="tem_list">
-                        <dt><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=32" title="锦纶/尼龙导电原丝"
-                               target='_self'><img class="lazyload"  data-src="__STATIC__/upload/201903/1553823727.jpg" title="锦纶/尼龙导电原丝"
-                                                   alt="锦纶/尼龙导电原丝"/></a></dt>
-                        <dd>
-                            <h3><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=32" title="锦纶/尼龙导电原丝"
-                                   target='_self'>锦纶/尼龙导电原丝</a></h3>
-                        </dd>
-                    </dl>
-                </li>
-
-                <li>
-                    <dl class="tem_list">
-                        <dt><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=47" title="涤纶导电纤维原丝"
-                               target='_self'><img
-                                class="lazyload"  data-src="__STATIC__/upload/201903/1553824084.jpg" title="涤纶导电纤维原丝" alt="涤纶导电纤维原丝"/></a></dt>
-                        <dd>
-                            <h3><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=47" title="涤纶导电纤维原丝"
-                                   target='_self'>涤纶导电纤维原丝</a></h3>
-                        </dd>
-                    </dl>
-
-
-                    <dl class="tem_list">
-                        <dt><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=46" title="黑色导电复合纱"
-                               target='_self'><img class="lazyload"  data-src="__STATIC__/upload/201903/1553824116.jpg" title="黑色导电复合纱"
-                                                   alt="黑色导电复合纱"/></a></dt>
-                        <dd>
-                            <h3><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=46" title="黑色导电复合纱"
-                                   target='_self'>黑色导电复合纱</a></h3>
-                        </dd>
-                    </dl>
-
-
-                    <dl class="tem_list">
-                        <dt><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=50" title="涤纶导电复合纱"
-                               target='_self'><img class="lazyload"  data-src="__STATIC__/upload/201903/1553823736.jpg" title="涤纶导电复合纱"
-                                                   alt="涤纶导电复合纱"/></a></dt>
-                        <dd>
-                            <h3><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=50" title="涤纶导电复合纱"
-                                   target='_self'>涤纶导电复合纱</a></h3>
-                        </dd>
-                    </dl>
-
-
-                    <dl class="tem_list">
-                        <dt><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=31" title="涤纶黑外导原丝"
-                               target='_self'><img class="lazyload"  data-src="__STATIC__/upload/201903/1553823867.jpg" title="涤纶黑外导原丝"
-                                                   alt="涤纶黑外导原丝"/></a></dt>
-                        <dd>
-                            <h3><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=31" title="涤纶黑外导原丝"
-                                   target='_self'>涤纶黑外导原丝</a></h3>
-                        </dd>
-                    </dl>
-                </li>
-
-                <li>
-                    <dl class="tem_list">
-                        <dt><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=41" title="白导电复合纱"
-                               target='_self'><img class="lazyload"  data-src="__STATIC__/upload/201903/1553823924.jpg" title="白导电复合纱"
-                                                   alt="白导电复合纱"/></a></dt>
-                        <dd>
-                            <h3><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=41" title="白导电复合纱"
-                                   target='_self'>白导电复合纱</a></h3>
-                        </dd>
-                    </dl>
-
-
-                    <dl class="tem_list">
-                        <dt><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=33" title="200Ｄ黑导电原丝"
-                               target='_self'><img class="lazyload"  data-src="__STATIC__/upload/201903/1553823781.jpg" title="200Ｄ黑导电原丝"
-                                                   alt="200Ｄ黑导电原丝"/></a></dt>
-                        <dd>
-                            <h3><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=33" title="200Ｄ黑导电原丝"
-                                   target='_self'>200Ｄ黑导电原丝</a></h3>
-                        </dd>
-                    </dl>
-
-
-                    <dl class="tem_list">
-                        <dt><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=54" title="白导电毛条"
-                               target='_self'><img class="lazyload"  data-src="__STATIC__/upload/201903/1553824510.jpg" title="白导电毛条"
-                                                   alt="白导电毛条"/></a>
-                        </dt>
-                        <dd>
-                            <h3><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=54" title="白导电毛条"
-                                   target='_self'>白导电毛条</a></h3>
-                        </dd>
-                    </dl>
-
-
-                    <dl class="tem_list">
-                        <dt><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=42" title="白导电 棉纱复合纤维"
-                               target='_self'><img class="lazyload"  data-src="__STATIC__/upload/201903/1553824228.jpg" title="白导电 棉纱复合纤维"
-                                                   alt="白导电 棉纱复合纤维"/></a></dt>
-                        <dd>
-                            <h3><a href="__STATIC__/product/showproduct.php.html?lang=cn&id=42" title="白导电 棉纱复合纤维"
-                                   target='_self'>白导电 棉纱复合纤维</a></h3>
-                        </dd>
-                    </dl>
-                </li>
+                {volist name="productArray" id="arr"}
+                    <li>
+                    {volist name="arr" id="item"}
+                        <dl class="tem_list">
+                            <dt>
+                                <a href="/index/product/showproduct?id={$item['product_id']}" title="{$item['name']}" target='_self'>
+                                    <img class="lazyload"  data-src="__STATIC__/{$item['img_url']}" title="{$item['name']}" alt="{$item['name']}"/>
+                                </a>
+                            </dt>
+                            <dd>
+                                <h3>
+                                    <a href="/index/product/showproduct?id={$item['product_id']}" title="{$item['name']}" target='_self'>{$item['name']}</a>
+                                </h3>
+                            </dd>
+                        </dl>
+                    {/volist}
+                    </li>
+                {/volist}
 
             </ul>
         </div>
-        <h4 class="tem_index_more"><a href="__STATIC__/product" title="查看更多" target='_self'>查看更多</a></h4>
+        <h4 class="tem_index_more"><a href="/index/product" title="查看更多" target='_self'>查看更多</a></h4>
     </div>
 </section>
 

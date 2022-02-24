@@ -79,6 +79,7 @@ seajs.config({
 	paths:{
 	    'templates':met_weburl+'templates/',
 		'packages':met_weburl+'templates/'+met_skin_user+'/packages',
+        'effects':met_weburl+'public/ui/v1/js/effects',
         "tem":met_weburl+"templates/"+met_skin_user
 	},
     preload:[

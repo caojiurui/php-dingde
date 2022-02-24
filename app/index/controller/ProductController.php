@@ -3,31 +3,48 @@
 namespace app\index\controller;
 
 use app\BaseController;
+use app\index\model\Classify;
+use app\index\model\Product;
 use app\Request;
 use think\View;
 
+
 class ProductController extends IndexBaseController
 {
-
     public function __construct()
     {
         parent::initialize();
         $this->met_module = "3";
     }
 
-    public function index()
+    public function index($classifyId = 66)
     {
         $this->assign([
-            'classnow' => "3",
+            'classnow' => $classifyId,
+            'classify' => Classify::findOrEmpty($classifyId),
+            'list' => Product::where('classify_id', $classifyId)->paginate([
+                'list_rows' => isMobile() ? 8 : 9,
+                'var_page' => 'page',
+            ])
         ]);
         return $this->fetch();
     }
 
-    public function showproduct()
+    public function showproduct($id)
     {
-        $this->assign([
-            'classnow' => "66",
-        ]);
+        $this->id = $id;
+        $product = Product::findOrEmpty($id);
+        $classifyId = $product['classify_id'];
+        $data = [
+            'classnow' => $classifyId,
+            'product' => $product,
+            'prevItem' => Product::findOrEmpty((int)Product::where('product_id', '<', $id)->max('product_id')),
+            'nextItem' => Product::findOrEmpty((int)Product::where('product_id', '>', $id)->min('product_id')),
+        ];
+        if (isMobile()) { //ÊÖ»ú¶ËÍÆ¼ö
+            $data['maylikeProducts'] = Product::where('classify_id', $classifyId)->limit(6)->select();
+        }
+        $this->assign($data);
         return $this->fetch();
     }
 

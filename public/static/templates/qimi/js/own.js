@@ -183,6 +183,9 @@ define(function (require) {
                 $(".qimi_index_case_list").hide();
                 $("#" + datename).fadeIn();
             })
+            if(!$(".qimi_index_product_tab li.flex-active").length){
+                $(".qimi_index_product_tab li:eq(0)").click();  //默认展示第一个产品数据
+            }
         }()
         void function () {
             $(".list_1 li").hover(function () {

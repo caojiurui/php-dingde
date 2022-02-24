@@ -1,0 +1,41 @@
+<style type="text/css">
+    .pagination {
+        margin: 50px auto;
+        width: max-content;
+    }
+
+    .pagination li {
+        float: left;
+        list-style-type: none;
+    }
+
+    .pagination li a,.pagination li span{
+        min-width: 24px;
+        padding: 5px;
+        border: 1px solid #e7e7e7;
+        background: #ffffff;
+        font-size: 13px;
+        color: #000;
+        margin: 0 3px;
+        display: inline-block;
+        line-height: 24px;
+        -webkit-transition: all 0.1s;
+        -moz-transition: all 0.1s;
+        transition: all 0.1s;
+        text-align: center;
+        cursor: pointer;
+    }
+    .pagination li.disabled {
+        display: none;
+    }
+
+    .pagination li.active span , .pagination li.active a , .pagination li:hover a{
+        background: #e06e1d;
+        border-color: #ddd;
+        color: #fff;
+    }
+</style>
+
+<div>
+    {$list|raw}
+</div>

@@ -8,7 +8,7 @@ define(function(require, exports, module) {
 	}
 	
 	if($("form.ui-from").length>0){
-		require.async('effects/form/form');
+		// require.async('effects/form/form');
 	}
     /*产品模块*/
     if(met_module==3){

@@ -1,4 +1,3 @@
-
 {include file='public/nav' imgUrl='__STATIC__/upload/201904/1554792703.jpg' /}
 
 <section>
@@ -12,12 +11,11 @@
                                 <div class="met_imgshowbox">
                                     <div class="my-simple-gallery slides">
                                         <figure>
-                                            <a href="__STATIC__/upload/201903/1553823685.jpg">
-                                                <img src="__STATIC__/upload/201903/1553823685.jpg" alt="锦纶导电原丝">
+                                            <a href="__STATIC__/{$product['img_url']}">
+                                                <img src="__STATIC__/{$product['img_url']}" alt="{$product['name']}">
                                             </a>
-                                            <figcaption>锦纶导电原丝</figcaption>
+                                            <figcaption>{$product['name']}</figcaption>
                                         </figure>
-
                                     </div>
                                 </div>
                                 <div class="met_clear"></div>
@@ -26,30 +24,12 @@
                         </dt>
                         <dd>
                             <div class="met_box">
-                                <h1 class='met_title'>锦纶导电原丝</h1>
+                                <h1 class='met_title'>{$product['name']}</h1>
 
 
                                 <div class='desc'>
                                     <h3>产品详情：</h3>
-                                    <div><p style="white-space: normal;">名称：锦纶导电原丝</p>
-                                        <p style="white-space: normal;">规格：20D2F、20D3F、40D3F</p>
-                                        <p style="white-space: normal;">导电成分：炭黑</p>
-                                        <p style="white-space: normal;">电阻：10^4Ω/cm</p>
-                                        <p style="white-space: normal;">应用：防静电服、特种劳保服装、劳保手套、触屏手套等</p>
-                                        <p style="white-space: normal;">电话：13506733158</p>
-                                        <p><br style="white-space: normal;"></p>
-                                        <p style="white-space: normal;"><br></p>
-                                        <p><br></p>
-                                        <div id="metinfo_additional"></div>
-                                        <br><span>标签:&nbsp&nbsp<a
-                                                href="__STATIC__/search/search.php.html?class1=&class2=&class3=&searchtype=0&searchword=&lang=cn"
-                                                target="_blank" title="海宁泰尔欣新材料有限公司"></a>&nbsp<a
-                                                href="__STATIC__/search/search.php-1.html?class1=&class2=&class3=&searchtype=0&searchword=%E9%BB%91%E5%A4%96%E5%AF%BC%E5%8E%9F%E4%B8%9D&lang=cn"
-                                                target="_blank" title="海宁泰尔欣新材料有限公司">黑外导原丝</a>&nbsp<a
-                                                href="__STATIC__/search/search.php-2.html?class1=&class2=&class3=&searchtype=0&searchword=%E5%AF%BC%E7%94%B5%E9%95%BF%E4%B8%9D&lang=cn"
-                                                target="_blank" title="海宁泰尔欣新材料有限公司">导电长丝</a>&nbsp<a
-                                                href="__STATIC__/search/search.php-3.html?class1=&class2=&class3=&searchtype=0&searchword=%E5%AF%BC%E7%94%B5%E7%BA%A4%E7%BB%B4&lang=cn"
-                                                target="_blank" title="海宁泰尔欣新材料有限公司">导电纤维</a></span></div>
+                                    <pre style="font-family: '微软雅黑';color: #666;line-height: 15px;">{$product['detail']}</pre>
                                 </div>
                             </div>
                         </dd>
@@ -58,10 +38,17 @@
 
                     <div class="met_tools">
                         <ul class="met_page">
-                            <li class="met_page_preinfo"><a
-                                    href='showproduct.php.html?lang=cn&id=45'><span>上一条</span></a></li>
-                            <li class="met_page_next"><a href='showproduct.php.html?lang=cn&id=35'><span>下一条</span></a>
-                            </li>
+                            {notempty name="$prevItem['product_id']"}
+                                <li class="met_page_preinfo">
+                                    <a href="/index/product/showproduct?id={$prevItem.product_id}"><span>上一条</span>
+                                    </a>
+                                </li>
+                            {/notempty}
+                            {notempty name="$nextItem['product_id']"}
+                                <li class="met_page_next">
+                                    <a href="/index/product/showproduct?id={$nextItem.product_id}"><span>下一条</span></a>
+                                </li>
+                            {/notempty}
                         </ul>
                     </div>
                 </div>

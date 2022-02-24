@@ -5,9 +5,9 @@ namespace app\index\model;
 
 use think\Model;
 
-class Classify extends Model
+class Product extends Model
 {
-    protected $table = 'classify';
-    protected $pk = 'classify_id';
+    protected $table = 'product';
+    protected $pk = 'product_id';
 
 }

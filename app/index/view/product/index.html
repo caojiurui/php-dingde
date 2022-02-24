@@ -1,93 +1,26 @@
-
 {include file='public/nav' imgUrl='__STATIC__/upload/201904/1554792703.jpg' /}
 
 <section>
 
-    {include file='public/tab'/}
+    {include file='public/classify'/}
 
     <section class="met_section qimi_section_other  ">
         <qimi_article>
-            <div>
+            <div class="met_module3_list">
+                <ul class="list_1">
+                    {volist name="list" id="item"}
+                    <li>
+                        <a href="/index/product/showproduct?id={$item['product_id']}" title="{$item['name']}" target='_self'>
+                            <img src="__STATIC__/{$item['img_url']}" width="400" height="300">
+                            <h2>{$item['name']}</h2>
+                        </a>
+                    </li>
+                    {/volist}
+                </ul>
 
+                <div class="met_clear"></div>
 
-                <div class="met_module3_list">
-
-                    <div class="p_pro_desc">
-
-                        <div class="met_clear"></div>
-                    </div>
-                    <ul class="list_1">
-
-                        <li>
-                            <a href="showproduct.php.html?lang=cn&id=34" title="锦纶导电原丝" target='_self'>
-                                <img src="__STATIC__/upload/201903/1553823685.jpg" width="400" height="300">
-                                <h2>锦纶导电原丝</h2>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="showproduct.php.html?lang=cn&id=35" title="20D3F白导电原丝" target='_self'>
-                                <img src="__STATIC__/upload/201903/1553824121.jpg" width="400" height="300">
-                                <h2>20D3F白导电原丝</h2>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="showproduct.php.html?lang=cn&id=32" title="锦纶/尼龙导电原丝" target='_self'>
-                                <img src="__STATIC__/upload/201903/1553823727.jpg" width="400" height="300">
-                                <h2>锦纶/尼龙导电原丝</h2>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="showproduct.php.html?lang=cn&id=31" title="涤纶黑外导原丝" target='_self'>
-                                <img src="__STATIC__/upload/201903/1553823867.jpg" width="400" height="300">
-                                <h2>涤纶黑外导原丝</h2>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="showproduct.php.html?lang=cn&id=33" title="200Ｄ黑导电原丝" target='_self'>
-                                <img src="__STATIC__/upload/201903/1553823781.jpg" width="400" height="300">
-                                <h2>200Ｄ黑导电原丝</h2>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="showproduct.php.html?lang=cn&id=120" title="DTY导电原丝40D" target='_self'>
-                                <img src="__STATIC__/upload/202007/1594803662.jpg" width="400" height="300">
-                                <h2>DTY导电原丝40D</h2>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="showproduct.php.html?lang=cn&id=119" title="DTY导电原丝150D" target='_self'>
-                                <img src="__STATIC__/upload/202007/1594803834.jpg" width="400" height="300">
-                                <h2>DTY导电原丝150D</h2>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="showproduct.php.html?lang=cn&id=115" title="DTY导电原丝75D" target='_self'>
-                                <img src="__STATIC__/upload/202007/1594701286.jpg" width="400" height="300">
-                                <h2>DTY导电原丝75D</h2>
-                            </a>
-                        </li>
-                    </ul>
-
-
-                    <div class="met_clear"></div>
-
-                    <div class='met_pager'>
-                        <span class='PreSpan'>&lt;</span><a href="product.php-9.html?lang=cn&class1=3&class2=66"
-                                                            class='Ahover'>1</a><span class='NextSpan'>&gt;</span>
-                        <span class='PageText'>转至第</span>
-                        <input type='text' id='metPageT'
-                               data-pageurl='product.php?lang=cn&class1=3&class2=66&page=||1' value='1'>
-                        <input type='button' id='metPageB' value='页'>
-                    </div>
-
-                </div>
+                {include file='public/paginate'/}
 
             </div>
         </qimi_article>

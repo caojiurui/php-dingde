@@ -17,7 +17,7 @@ class NavView
     public function handle($request, \Closure $next)
     {
         if (isMobile()) {   //设置手机视图
-            Config::set(['view_path' => app_path() . '/view_m/'],'view');
+            Config::set(['view_path' => app_path() . '/view_m/'], 'view');
         }
         return $next($request);
     }

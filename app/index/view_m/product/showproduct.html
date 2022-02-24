@@ -9,9 +9,9 @@
                         data-am-gallery="{pureview: 1}">
                         <li>
                             <div class="am-gallery-item">
-                                <img src="__STATIC__/upload/201903/1553824083.jpg"
-                                     data-rel="__STATIC__/upload/201903/1553824083.jpg" alt="黑导电毛条"/>
-                                <h3 class="am-gallery-title">黑导电毛条</h3>
+                                <img src="__STATIC__/{$product['img_url']}"
+                                     data-rel="__STATIC__/{$product['img_url']}" alt="{$product['name']}"/>
+                                <h3 class="am-gallery-title">{$product['name']}</h3>
                             </div>
                         </li>
 
@@ -21,11 +21,13 @@
                 <dl class='pshow'>
                     <dd>
                         <div class="met_box">
-                            <h1 class='met_title'>黑导电毛条</h1>
+                            <h1 class='met_title'>{$product['name']}</h1>
                             <ul>
 
                             </ul>
-                            <p class="desc">名称：涤纶导电毛条规格：2.2D-2.5D电阻：10^5Ω/cm用途：羊毛衫（消除静电）、羊绒衫等电话：13506733158</p>
+                            {notempty name="$product['detail']"}
+                            <p class="desc">{$product['detail']}</p>
+                            {/notempty}
                         </div>
                     </dd>
                 </dl>
@@ -40,74 +42,48 @@
                             </div>
                         </div>
                     </div>
+                    {notempty name="$product['detail']"}
                     <div class="met_nav_contbox am-tabs-bd">
-
                         <div class="met_editor am-in am-active am-tab-panel am-fade" id="tab1">
-                            <div><p>名称：涤纶导电毛条</p>
-                                <p>规格：2.2D-2.5D</p>
-                                <p>电阻：10^5Ω/cm</p>
-                                <p>用途：羊毛衫（消除静电）、羊绒衫等</p>
-                                <p>电话：13506733158</p>
-                                <div id="metinfo_additional"></div>
-                            </div>
+                            <pre style="font-family: '微软雅黑';color: #666;line-height: 15px;background:none;border: none">{$product['detail']}</pre>
                             <div class="met_clear"></div>
                         </div>
-
                     </div>
+                    {/notempty}
                 </div>
-
+                <div class="met_tools">
+                    <ul class="met_page">
+                        <li class="met_page_preinfo"><span>上一条</span>
+                            {if ($prevItem['product_id'])}
+                                <a href="/index/product/showproduct?id={$prevItem.product_id}">{$prevItem['name']}</a>
+                            {else /}
+                                <a href="#">没有了</a>
+                            {/if}
+                        </li>
+                        <li class="met_page_next"><span>下一条</span>
+                            {if ($nextItem['product_id'])}
+                                <a href="/index/product/showproduct?id={$nextItem.product_id}">{$nextItem['name']}</a>
+                            {else /}
+                                <a href="#">没有了</a>
+                            {/if}
+                        </li>
+                    </ul>
+                </div>
                 <h3 class="met_related">您可能喜欢</h3>
                 <ul class="met_related_list">
 
+                    {volist name="maylikeProducts" id="item"}
                     <li>
-                        <a href="m.showproduct.html?lang=cn&id=54" title="白导电毛条" target='_self'>
-                            <img src="__STATIC__/upload/201903/1553824510.jpg"
-                                 width="400" height="300"
-                            />
-                            <h2>白导电毛条</h2>
+                        <a href="/index/product/showproduct?id={$item['product_id']}" title="{$item['name']}" target='_self'>
+                            <img src="__STATIC__/{$item['img_url']}" width="400" height="300" />
+                            <h2>{$item['name']}</h2>
                         </a>
                     </li>
-
-                    <li>
-                        <a href="m.showproduct.html?lang=cn&id=55" title="白导电短纤" target='_self'>
-                            <img src="__STATIC__/upload/201903/1553828335.jpg"
-                                 width="400" height="300"
-                            />
-                            <h2>白导电短纤</h2>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="m.showproduct.html?lang=cn&id=38" title="灰导电短纤" target='_self'>
-                            <img src="__STATIC__/upload/201903/1553827881.jpg"
-                                 width="400" height="300"
-                            />
-                            <h2>灰导电短纤</h2>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="m.showproduct.html?lang=cn&id=36" title="黑色涤纶短纤" target='_self'>
-                            <img src="__STATIC__/upload/201903/1553827838.jpg"
-                                 width="400" height="300"
-                            />
-                            <h2>黑色涤纶短纤</h2>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="m.showproduct.html?lang=cn&id=37" title="黑导电短纤" target='_self'>
-                            <img src="__STATIC__/upload/201903/1553828263.jpg"
-                                 width="400" height="300"
-                            />
-                            <h2>黑导电短纤</h2>
-                        </a>
-                    </li>
+                    {/volist}
 
                 </ul>
 
             </div>
-
         </div>
     </article>
     <div class="met_clear"></div>

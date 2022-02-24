@@ -6,7 +6,7 @@
 return [
     // 字符替换
     'tpl_replace_string' => [
-        '__DOMAIN__' => env('domain', 'http://www.dingde.vip/'),
+        '__DOMAIN__' => env('domain', 'http://www.dingde.vip'),
         '__STATIC__' => env('static_path', '/static'),
     ],
     //模版布局

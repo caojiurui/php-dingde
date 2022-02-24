@@ -7,9 +7,9 @@ declare (strict_types=1);
 
 namespace app\index\controller;
 
+use app\index\model\Classify;
 use Exception;
 use app\BaseController;
-use think\Model;
 use think\View;
 
 class IndexBaseController extends BaseController
@@ -21,8 +21,8 @@ class IndexBaseController extends BaseController
     protected View $view;
 
     //前端使用，可忽略
-    protected $met_module = "";
-    protected $id = "";
+    protected $met_module = "";     //当前页面所属模块
+    protected $id = "";             //当前页面ID（仅详情页有）
 
     public function __construct()
     {
@@ -59,7 +59,7 @@ class IndexBaseController extends BaseController
     {
         // 赋值后台变量
         $this->assign([
-            'navbar' => $this->navbar,
+            'navbar' => $this->getNavbarArray(),
             'lang' => 'cn',
             'met_module' => $this->met_module,
             'id' => $this->id,
@@ -67,64 +67,59 @@ class IndexBaseController extends BaseController
         return $this->view->fetch($template, $vars);
     }
 
-    private $navbar = [
-        [
-            'key' => 'index',
-            'name' => '首页',
-            'href' => '/index/index',
-        ],
-        [
-            'key' => 'about',
-            'name' => '关于我们',
-            'href' => '/index/about',
-            'children' => [
-                [
-                    'key' => 'about',
-                    'name' => '公司简介',
-                    'href' => '/index/about',
-                ],
-                [
-                    'key' => 'about/about2',
-                    'name' => '企业文化',
-                    'href' => '/index/about/about2',
+    protected function getNavbarArray()
+    {
+        return [
+            [
+                'key' => 'index',
+                'name' => '首页',
+                'href' => '/index/index',
+            ],
+            [
+                'key' => 'about',
+                'name' => '关于我们',
+                'href' => '/index/about',
+                'children' => [
+                    [
+                        'key' => 'about',
+                        'name' => '公司简介',
+                        'href' => '/index/about',
+                    ],
+                    [
+                        'key' => 'about/about2',
+                        'name' => '企业文化',
+                        'href' => '/index/about/about2',
+                    ]
                 ]
-            ]
-        ], [
-            'key' => 'product',
-            'name' => '导电纤维产品',
-            'href' => '/index/product',
-            'children' => [
-                [
-                    'key' => 'product',
-                    'name' => '导电纱线 长丝',
-                    'href' => '/index/product',
-                ],
-                [
-                    'key' => 'product/product2',
-                    'name' => '复合纱',
-                    'href' => '/index/product/product2',
+            ], [
+                'key' => 'product',
+                'name' => '导电纤维产品',
+                'href' => '/index/product',
+                'children' => Classify::select()->each(function ($item, $key) {
+                    $item['key'] = 'product/' . $item['classify_id'];
+                    $item['href'] = '/index/product/' . $item['classify_id'];
+                })
+            ], [
+                'key' => 'laboratory',
+                'name' => '实验检测',
+                'href' => '/index/laboratory',
+                'children' => [
+                    [
+                        'key' => 'laboratory',
+                        'name' => '实验室',
+                        'href' => '/index/laboratory',
+                    ],
+                    [
+                        'key' => 'laboratory/reports',
+                        'name' => '实验报告',
+                        'href' => '/index/laboratory/reports',
+                    ]
                 ]
+            ], [
+                'key' => 'message',
+                'name' => '联系我们',
+                'href' => '/index/message',
             ]
-        ], [
-            'key' => 'laboratory',
-            'name' => '实验检测',
-            'href' => '/index/laboratory',
-            'children' => [
-                [
-                    'key' => 'laboratory',
-                    'name' => '实验室',
-                    'href' => '/index/laboratory',
-                ],
-                [
-                    'key' => 'laboratory/reports',
-                    'name' => '实验报告',
-                    'href' => '/index/laboratory/reports',
-                ]
-            ]
-        ], [
-            'key' => 'message',
-            'name' => '联系我们',
-            'href' => '/index/message',
-        ]
-    ];
+        ];
+    }
 }

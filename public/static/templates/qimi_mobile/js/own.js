@@ -39,7 +39,6 @@ define(function (require, exports, module) {
         navfucn($(".tem_head .tem_langlist"), $(this));
     });
 
-    console.log(1)
     $('.tem_banner').flexslider({directionNav: false});
 
     if ($(".tem_index_product").length > 0) {

@@ -2,7 +2,7 @@ define(function (require, exports, module) {
     var common = require('common');   		//公用类
 
     if ($("form.ui-from").length > 0) {
-        require.async('effects/form/form');
+        // require.async('effects/form/form');
     }
 //右下角弹出图标----------------------------------------------------------
     $(document).ready(function () {

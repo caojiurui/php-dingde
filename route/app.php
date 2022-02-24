@@ -1,2 +1,6 @@
 <?php
 use think\facade\Route;
+
+Route::miss(function() {    //MISSÂ·ÓÉ
+    return '404 Not Found!';
+});

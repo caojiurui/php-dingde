@@ -30,7 +30,7 @@ CREATE TABLE `classify` (
 -- ----------------------------
 -- Records of classify
 -- ----------------------------
-INSERT INTO `classify` VALUES ('66', '\r\n导电纱线 长丝', '2022-02-22 19:20:22', '2022-02-22 19:20:25');
+INSERT INTO `classify` VALUES ('66', '导电纱线 长丝', '2022-02-22 19:20:22', '2022-02-22 19:20:25');
 INSERT INTO `classify` VALUES ('67', '复合纱', '2022-02-22 19:21:02', '2022-02-22 19:21:04');
 
 -- ----------------------------
@@ -47,9 +47,3 @@ CREATE TABLE `product` (
   `update_datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`product_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='产品表';
-
--- ----------------------------
--- Records of product
--- ----------------------------
-INSERT INTO `product` VALUES ('34', '66', '锦纶导电原丝', 'http://www.hntaierxin.com/upload/201903/1553823685.jpg', '\"名称：锦纶导电原丝\\n\\n规格：20D2F、20D3F、40D3F\\n\\n导电成分：炭黑\\n\\n电阻：10^4Ω/cm\\n\\n应用：防静电服、特种劳保服装、劳保手套、触屏手套等\\n\\n电话：13506733158\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n标签:   黑外导原丝 导电长丝 导电纤维', '2022-02-22 19:28:07', '2022-02-22 22:47:06');
-INSERT INTO `product` VALUES ('35', '66', '锦纶导电原丝22', 'http://www.hntaierxin.com/upload/201903/1553823685.jpg', '\"名称：锦纶导电原丝\\n\\n规格：20D2F、20D3F、40D3F\\n\\n导电成分：炭黑\\n\\n电阻：10^4Ω/cm\\n\\n应用：防静电服、特种劳保服装、劳保手套、触屏手套等\\n\\n电话：13506733158\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n标签:   黑外导原丝 导电长丝 导电纤维', '2022-02-22 19:28:07', '2022-02-22 22:47:06');

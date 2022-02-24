@@ -12,8 +12,8 @@
                 <div class='met_pager'>
                 </div>
 
-                <form enctype='multipart/form-data' method='POST' class="ui-from" name='myform'
-                      action='message.php?action=add'>
+                <form enctype='multipart/form-data' id="messageForm" method='POST' class="ui-from" name='myform'
+                      action="/index/message/sendEmail">
                     <div class="v52fmbx">
                         <input type='hidden' name='lang' value='cn'/>
                         <h3 class="v52fmbx_hr">留言</h3>
@@ -22,7 +22,7 @@
                             <dt class="ftype_select">姓名</dt>
                             <dd class="ftype_input">
                                 <div class="fbox">
-                                    <input name='para115' type='text' placeholder='姓名 ' data-required=1/>
+                                    <input name='姓名' type='text' placeholder='姓名 ' data-required=1/>
                                 </div>
                                 <span class="tips"></span>
                             </dd>
@@ -32,7 +32,7 @@
                             <dt class="ftype_select">联系电话</dt>
                             <dd class="ftype_input">
                                 <div class="fbox">
-                                    <input name='para116' type='text' placeholder='联系电话 ' data-required=1/>
+                                    <input name='联系电话' type='text' placeholder='联系电话 ' data-required=1/>
                                 </div>
                                 <span class="tips"></span>
                             </dd>
@@ -42,7 +42,7 @@
                             <dt class="ftype_select">电子邮箱</dt>
                             <dd class="ftype_input">
                                 <div class="fbox">
-                                    <input name='para117' type='text' placeholder='电子邮箱 ' data-required=1/>
+                                    <input name='电子邮箱' type='text' placeholder='电子邮箱 ' data-required=1/>
                                 </div>
                                 <span class="tips"></span>
                             </dd>
@@ -52,7 +52,7 @@
                             <dt class="ftype_select">留言内容</dt>
                             <dd class="ftype_textarea">
                                 <div class="fbox">
-                                    <textarea name='para119' data-required=1 placeholder='留言内容 '></textarea>
+                                    <textarea name='留言内容' data-required=1 placeholder='留言内容 '></textarea>
                                 </div>
                                 <span class="tips"></span>
                             </dd>
