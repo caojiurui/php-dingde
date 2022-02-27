@@ -25,24 +25,22 @@ class MessageController extends IndexBaseController
 
     public function sendEmail()
     {
-        //Server settings
         $mail = new PHPMailer(true);
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-        $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host = 'smtp.163.com';                     //Set the SMTP server to send through
-        $mail->SMTPAuth = true;                                   //Enable SMTP authentication
-        $mail->Username = 'caojiurui3@163.com';                     //SMTP username
-        $mail->Password = 'IWSVCXANTJACUOAZ';                               //SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-        $mail->Port = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+//        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+        $mail->isSMTP();
+        $mail->CharSet = PHPMailer::CHARSET_UTF8;
+        $mail->Host = 'smtp.163.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'caojiurui3@163.com';
+        $mail->Password = 'IWSVCXANTJACUOAZ';
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $mail->Port = 465;
 
-        //Recipients
-        $mail->setFrom('caojiurui3@163.com', 'ÓÊ¼þ»úÆ÷ÈË');
-        $mail->addAddress('904981950@qq.com', 'ÍøÕ¾¹ÜÀíÕß´óÈË');     //Add a recipient
+        $mail->setFrom('caojiurui3@163.com', 'é‚®ä»¶æœºå™¨äºº');
+        $mail->addAddress('904981950@qq.com', 'ç½‘ç«™ç®¡ç†è€…å¤§äºº');     //Add a recipient
 
-        //Content
         $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = '¡¾¶¦µÂ¡¿ÐÂÁôÑÔ£º' . (request()->param("ÁôÑÔÄÚÈÝ") || '');
+        $mail->Subject = 'ã€é¼Žå¾·ã€‘æ–°ç•™è¨€ï¼š' . (request()->param("ç•™è¨€å†…å®¹") || '');
         $body = "<table style='text-align:left;border-collapse:collapse;border-color:#cccc;border:solid 1px#B4B4B4;margin-left:10px;font-size:13px;'>";
         foreach (request()->param() as $key => $value) {
             $body .= "<tr style='border:solid 1px#B4B4B4;'>" .
@@ -56,6 +54,5 @@ class MessageController extends IndexBaseController
         $mail->send();
         return json(['success' => true]);
     }
-
 
 }

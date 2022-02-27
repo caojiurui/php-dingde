@@ -1,6 +1,6 @@
 <?php
 use think\facade\Route;
 
-Route::miss(function() {    //MISSÂ·ÓÉ
+Route::miss(function() {    //MISSè·¯ç”±
     return '404 Not Found!';
 });

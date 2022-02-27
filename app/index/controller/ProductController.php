@@ -41,7 +41,7 @@ class ProductController extends IndexBaseController
             'prevItem' => Product::findOrEmpty((int)Product::where('product_id', '<', $id)->max('product_id')),
             'nextItem' => Product::findOrEmpty((int)Product::where('product_id', '>', $id)->min('product_id')),
         ];
-        if (isMobile()) { //ÊÖ»ú¶ËÍÆ¼ö
+        if (isMobile()) {
             $data['maylikeProducts'] = Product::where('classify_id', $classifyId)->limit(6)->select();
         }
         $this->assign($data);

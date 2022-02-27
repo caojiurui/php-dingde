@@ -52,7 +52,10 @@ define(function (require, exports, module) {
             processData: false,
             dataType: 'json', //返回数据形式json
             success: function (data) {
-                alert("留言成功")
+                data.success ? alert("留言成功") : alert("留言失败");
+            },
+            error: function () {
+                alert("留言失败")
             }
         })
     });
