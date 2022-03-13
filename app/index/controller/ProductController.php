@@ -22,7 +22,7 @@ class ProductController extends IndexBaseController
         $this->assign([
             'classnow' => $classifyId,
             'classify' => Classify::findOrEmpty($classifyId),
-            'list' => Product::where('classify_id', $classifyId)->paginate([
+            'list' => Product::where('classify_id', $classifyId)->order('weigh', 'desc')->paginate([
                 'list_rows' => isMobile() ? 8 : 9,
                 'var_page' => 'page',
             ])
@@ -42,7 +42,7 @@ class ProductController extends IndexBaseController
             'nextItem' => Product::findOrEmpty((int)Product::where('id', '>', $id)->min('id')),
         ];
         if (isMobile()) {
-            $data['maylikeProducts'] = Product::where('classify_id', $classifyId)->limit(6)->select();
+            $data['maylikeProducts'] = Product::where('classify_id', $classifyId)->order('weigh', 'desc')->limit(6)->select();
         }
         $this->assign($data);
         return $this->fetch();
