@@ -5,7 +5,7 @@
             {volist name="navbar" id="item"}
                 {eq name="$item['key']" value="product"}
                     {volist name="$item['children']" id="child"}
-                        <li class='{eq name="$child.classify_id" value="$classify.classify_id"} on {/eq}' id="nav{$i}">
+                        <li class='{eq name="$child.id" value="$classify.id"} on {/eq}' id="nav{$i}">
                             <a href="{$child['href']}#nav{$i}" title="{$child['name']}">
                                 <div>{$child['name']}</div>
                             </a>

@@ -27,7 +27,7 @@
             </h3>
             <ol class="qimi_index_product_tab">
                 {volist name="classifyList" id="classify"}
-                    <li data-name="tab{$classify['classify_id']}"><h3>{$classify['name']}</h3></li>
+                    <li data-name="tab{$classify['id']}"><h3>{$classify['name']}</h3></li>
                 {/volist}
             </ol>
             <div class="met_clear"></div>
@@ -36,18 +36,18 @@
             <div class="slides qimi_index_case">
 
                 {volist name="classifyList" id="classify"}
-                    <div class="qimi_index_case_list met_none" id="tab{$classify['classify_id']}">
+                    <div class="qimi_index_case_list met_none" id="tab{$classify['id']}">
                         <div class="qimi_index_product_list">
                             {volist name="productList" id="item"}
-                            {eq name="$item['classify_id']" value="$classify['classify_id']"}
+                            {eq name="$item['classify_id']" value="$classify['id']"}
                             <div class="item">
-                                <a href="/index/product/showproduct?id={$item['product_id']}" >
+                                <a href="/index/product/showproduct?id={$item['id']}" >
                                     <div class="img-box">
                                         <div class="circle">
                                             <i class="fa fa-long-arrow-right"></i>
                                         </div>
                                         <div class="img"></div>
-                                        <img class="lazyload"  data-src="__STATIC__/{$item['img_url']}" width="100%" height="305px">
+                                        <img class="lazyload"  data-src="__ADMIN__/{$item['images']}" width="100%" height="305px">
                                     </div>
                                     <div class="ptitle">{$item['name']}</div>
                                 </a>
@@ -56,7 +56,7 @@
                             {/volist}
                         </div>
                         <div class="tem_index_more">
-                                <a href="/index/product/{$classify['classify_id']}" title="MORE" target='_self'>MORE</a>
+                                <a href="/index/product/{$classify['id']}" title="MORE" target='_self'>MORE</a>
                         </div>
                     </div>
                 {/volist}

@@ -55,13 +55,13 @@ foreach($productList as $key=>$item){
                     {volist name="arr" id="item"}
                         <dl class="tem_list">
                             <dt>
-                                <a href="/index/product/showproduct?id={$item['product_id']}" title="{$item['name']}" target='_self'>
-                                    <img class="lazyload"  data-src="__STATIC__/{$item['img_url']}" title="{$item['name']}" alt="{$item['name']}"/>
+                                <a href="/index/product/showproduct?id={$item['id']}" title="{$item['name']}" target='_self'>
+                                    <img class="lazyload"  data-src="__ADMIN__/{$item['images']}" title="{$item['name']}" alt="{$item['name']}"/>
                                 </a>
                             </dt>
                             <dd>
                                 <h3>
-                                    <a href="/index/product/showproduct?id={$item['product_id']}" title="{$item['name']}" target='_self'>{$item['name']}</a>
+                                    <a href="/index/product/showproduct?id={$item['id']}" title="{$item['name']}" target='_self'>{$item['name']}</a>
                                 </h3>
                             </dd>
                         </dl>

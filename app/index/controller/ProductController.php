@@ -38,8 +38,8 @@ class ProductController extends IndexBaseController
         $data = [
             'classnow' => $classifyId,
             'product' => $product,
-            'prevItem' => Product::findOrEmpty((int)Product::where('product_id', '<', $id)->max('product_id')),
-            'nextItem' => Product::findOrEmpty((int)Product::where('product_id', '>', $id)->min('product_id')),
+            'prevItem' => Product::findOrEmpty((int)Product::where('id', '<', $id)->max('id')),
+            'nextItem' => Product::findOrEmpty((int)Product::where('id', '>', $id)->min('id')),
         ];
         if (isMobile()) {
             $data['maylikeProducts'] = Product::where('classify_id', $classifyId)->limit(6)->select();

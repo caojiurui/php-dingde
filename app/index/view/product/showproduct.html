@@ -11,8 +11,8 @@
                                 <div class="met_imgshowbox">
                                     <div class="my-simple-gallery slides">
                                         <figure>
-                                            <a href="__STATIC__/{$product['img_url']}">
-                                                <img src="__STATIC__/{$product['img_url']}" alt="{$product['name']}">
+                                            <a href="__ADMIN__/{$product['images']}">
+                                                <img src="__ADMIN__/{$product['images']}" alt="{$product['name']}" style="max-width: 100%">
                                             </a>
                                             <figcaption>{$product['name']}</figcaption>
                                         </figure>
@@ -25,11 +25,9 @@
                         <dd>
                             <div class="met_box">
                                 <h1 class='met_title'>{$product['name']}</h1>
-
-
                                 <div class='desc'>
                                     <h3>产品详情：</h3>
-                                    <pre style="font-family: '微软雅黑';color: #666;line-height: 15px;">{$product['detail']}</pre>
+                                    {$product['detail_content']|raw}
                                 </div>
                             </div>
                         </dd>
@@ -38,15 +36,15 @@
 
                     <div class="met_tools">
                         <ul class="met_page">
-                            {notempty name="$prevItem['product_id']"}
+                            {notempty name="$prevItem['id']"}
                                 <li class="met_page_preinfo">
-                                    <a href="/index/product/showproduct?id={$prevItem.product_id}"><span>上一条</span>
+                                    <a href="/index/product/showproduct?id={$prevItem.id}"><span>上一条</span>
                                     </a>
                                 </li>
                             {/notempty}
-                            {notempty name="$nextItem['product_id']"}
+                            {notempty name="$nextItem['id']"}
                                 <li class="met_page_next">
-                                    <a href="/index/product/showproduct?id={$nextItem.product_id}"><span>下一条</span></a>
+                                    <a href="/index/product/showproduct?id={$nextItem.id}"><span>下一条</span></a>
                                 </li>
                             {/notempty}
                         </ul>

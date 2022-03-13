@@ -8,6 +8,6 @@ use think\Model;
 class Product extends Model
 {
     protected $table = 'product';
-    protected $pk = 'product_id';
+    protected $pk = 'id';
 
 }

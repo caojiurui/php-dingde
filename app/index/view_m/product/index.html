@@ -19,8 +19,8 @@
 
                     {volist name="list" id="item"}
                     <li>
-                        <a href="/index/product/showproduct?id={$item['product_id']}" title="{$item['name']}" target='_self'>
-                            <img src="__STATIC__/{$item['img_url']}" width="400" height="300" />
+                        <a href="/index/product/showproduct?id={$item['id']}" title="{$item['name']}" target='_self'>
+                            <img src="__ADMIN__/{$item['images']}" width="400" height="300" />
                             <h2>{$item['name']}</h2>
                         </a>
                     </li>

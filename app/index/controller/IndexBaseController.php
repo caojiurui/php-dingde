@@ -96,8 +96,8 @@ class IndexBaseController extends BaseController
                 'name' => '导电纤维产品',
                 'href' => '/index/product',
                 'children' => Classify::select()->each(function ($item, $key) {
-                    $item['key'] = 'product/' . $item['classify_id'];
-                    $item['href'] = '/index/product/' . $item['classify_id'];
+                    $item['key'] = 'product/' . $item['id'];
+                    $item['href'] = '/index/product/' . $item['id'];
                 })
             ], [
                 'key' => 'laboratory',

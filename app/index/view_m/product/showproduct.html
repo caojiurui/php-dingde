@@ -9,8 +9,8 @@
                         data-am-gallery="{pureview: 1}">
                         <li>
                             <div class="am-gallery-item">
-                                <img src="__STATIC__/{$product['img_url']}"
-                                     data-rel="__STATIC__/{$product['img_url']}" alt="{$product['name']}"/>
+                                <img src="__ADMIN__/{$product['images']}"
+                                     data-rel="__ADMIN__/{$product['images']}" alt="{$product['name']}"/>
                                 <h3 class="am-gallery-title">{$product['name']}</h3>
                             </div>
                         </li>
@@ -25,8 +25,8 @@
                             <ul>
 
                             </ul>
-                            {notempty name="$product['detail']"}
-                            <p class="desc">{$product['detail']}</p>
+                            {notempty name="$product['description']"}
+                            <p class="desc">{$product['description']}</p>
                             {/notempty}
                         </div>
                     </dd>
@@ -42,10 +42,10 @@
                             </div>
                         </div>
                     </div>
-                    {notempty name="$product['detail']"}
+                    {notempty name="$product['detail_content']"}
                     <div class="met_nav_contbox am-tabs-bd">
                         <div class="met_editor am-in am-active am-tab-panel am-fade" id="tab1">
-                            <pre style="font-family: '微软雅黑';color: #666;line-height: 15px;background:none;border: none">{$product['detail']}</pre>
+                            {$product['detail_content']|raw}
                             <div class="met_clear"></div>
                         </div>
                     </div>
@@ -54,15 +54,15 @@
                 <div class="met_tools">
                     <ul class="met_page">
                         <li class="met_page_preinfo"><span>上一条</span>
-                            {if ($prevItem['product_id'])}
-                                <a href="/index/product/showproduct?id={$prevItem.product_id}">{$prevItem['name']}</a>
+                            {if ($prevItem['id'])}
+                                <a href="/index/product/showproduct?id={$prevItem.id}">{$prevItem['name']}</a>
                             {else /}
                                 <a href="#">没有了</a>
                             {/if}
                         </li>
                         <li class="met_page_next"><span>下一条</span>
-                            {if ($nextItem['product_id'])}
-                                <a href="/index/product/showproduct?id={$nextItem.product_id}">{$nextItem['name']}</a>
+                            {if ($nextItem['id'])}
+                                <a href="/index/product/showproduct?id={$nextItem.id}">{$nextItem['name']}</a>
                             {else /}
                                 <a href="#">没有了</a>
                             {/if}
@@ -74,8 +74,8 @@
 
                     {volist name="maylikeProducts" id="item"}
                     <li>
-                        <a href="/index/product/showproduct?id={$item['product_id']}" title="{$item['name']}" target='_self'>
-                            <img src="__STATIC__/{$item['img_url']}" width="400" height="300" />
+                        <a href="/index/product/showproduct?id={$item['id']}" title="{$item['name']}" target='_self'>
+                            <img src="__ADMIN__/{$item['images']}" width="400" height="300" />
                             <h2>{$item['name']}</h2>
                         </a>
                     </li>
