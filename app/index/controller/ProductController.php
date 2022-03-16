@@ -42,7 +42,11 @@ class ProductController extends IndexBaseController
             'nextItem' => Product::findOrEmpty((int)Product::where('id', '>', $id)->min('id')),
         ];
         if (isMobile()) {
-            $data['maylikeProducts'] = Product::where('classify_id', $classifyId)->order('weigh', 'desc')->limit(6)->select();
+            $data['maylikeProducts'] =
+                Product::whereRaw("classify_id=:classifyId and id<>:id", ['classifyId' => $classifyId, 'id' => $id])
+                    ->order('weigh', 'desc')
+                    ->limit(6)
+                    ->select();
         }
         $this->assign($data);
         return $this->fetch();
