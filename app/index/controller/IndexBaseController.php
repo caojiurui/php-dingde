@@ -23,6 +23,13 @@ class IndexBaseController extends BaseController
     //前端使用，可忽略
     protected $met_module = "";     //当前页面所属模块
     protected $id = "";             //当前页面ID（仅详情页有）
+    protected $companyInfo = [      //公司信息
+        'name' => '宜兴市鼎德新材料有限公司',
+        'phone' => '13701534028、13506156526',
+        'email' => 'dingde66@163.com 、2947377123@qq.com',
+        'address' => '江苏省宜兴市和桥镇北渠村菜庄25号',
+        'introduce' => '宜兴市鼎德新材料有限公司位于宜兴市和桥镇，主要从事PP导电丝、导电纤维产品的生产和销售。坚持“质量为本，客户第一”的企业理念。欢迎来电咨询、洽谈合作！'
+    ];
 
     public function __construct()
     {
@@ -63,6 +70,7 @@ class IndexBaseController extends BaseController
             'lang' => 'cn',
             'met_module' => $this->met_module,
             'id' => $this->id,
+            'companyInfo' => $this->companyInfo
         ]);
         return $this->view->fetch($template, $vars);
     }
@@ -99,7 +107,7 @@ class IndexBaseController extends BaseController
                     $item['key'] = 'product/' . $item['id'];
                     $item['href'] = '/index/product/' . $item['id'];
                 })
-            ], [
+            ], /*[
                 'key' => 'laboratory',
                 'name' => '实验检测',
                 'href' => '/index/laboratory',
@@ -115,7 +123,7 @@ class IndexBaseController extends BaseController
                         'href' => '/index/laboratory/reports',
                     ]
                 ]
-            ], [
+            ],*/ [
                 'key' => 'message',
                 'name' => '联系我们',
                 'href' => '/index/message',

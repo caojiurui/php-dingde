@@ -13,7 +13,7 @@
 			</span>
         </h3>
         <div class="met_editor">
-            <p><span style="font-family: 宋体, SimSun; font-size: 12px;">宜兴市鼎德新材料有限公司位于钱塘江北岸的海宁尖山新区，主要从事导电纤维产品的研发、生产和销售。坚持“以质量求生存，以信誉求发展”的企业理念。欢迎来电咨询、洽谈及研发合作！</span>
+            <p><span style="font-family: 宋体, SimSun; font-size: 12px;">{$companyInfo.introduce}</span>
             </p>
             <div class="met_clear"></div>
             <h4 class="tem_index_about_more" style="text-align: center">
@@ -81,9 +81,9 @@ foreach($productList as $key=>$item){
             <dt><span>联系我们</span></dt>
             <dd>
                 <ul>
-                    <li><i class="fa fa-map-marker"></i>浙江省海宁市尖山新区安江路74号</li>
-                    <li><i class="fa fa-phone"></i>13506733158</li>
-                    <li><i class="fa fa-envelope-o"></i>459925494@qq.com</li>
+                    <li><i class="fa fa-map-marker"></i>{$companyInfo.address}</li>
+                    <li><i class="fa fa-phone"></i>{$companyInfo.phone}</li>
+                    <li><i class="fa fa-envelope-o"></i>{$companyInfo.email}</li>
                 </ul>
             </dd>
         </dl>

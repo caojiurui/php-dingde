@@ -37,7 +37,8 @@ class MessageController extends IndexBaseController
         $mail->Port = 465;
 
         $mail->setFrom('caojiurui3@163.com', '邮件机器人');
-        $mail->addAddress('904981950@qq.com', '网站管理者大人');     //Add a recipient
+        $mail->addAddress('dingde66@163.com', '鼎德网站管理者');
+        $mail->addAddress('2947377123@qq.com', '鼎德网站管理者');
 
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = '【鼎德】新留言：' . (request()->param("留言内容") || '');
