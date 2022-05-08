@@ -27,6 +27,7 @@ class IndexBaseController extends BaseController
         'name' => '宜兴市鼎德新材料有限公司',
         'phone' => '13701534028、13506156526',
         'email' => 'dingde66@163.com 、2947377123@qq.com',
+        'keywords' => '导电纤维|导电纱线',
         'address' => '江苏省宜兴市和桥镇北渠村菜庄25号',
         'introduce' => '宜兴市鼎德新材料有限公司位于宜兴市和桥镇，主要从事PP导电丝、导电纤维产品的生产和销售。坚持“质量为本，客户第一”的企业理念。欢迎来电咨询、洽谈合作！'
     ];
