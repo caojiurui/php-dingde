@@ -63,8 +63,43 @@
                         </div>
                     </form>
 
-                    <div id="allmap"></div>
-                    <link rel="stylesheet"
+                    <div id="allmap_image"
+                         style="
+                             max-width: 90%;
+                             margin: 0 auto;
+                             padding: 24px 28px;
+                             background: #fff;
+                             border-radius: 12px;
+                             box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+                             text-align: center;
+                             font-family: 'Microsoft YaHei', Arial, sans-serif;
+                         ">
+
+                             <div class="address-content"
+                                                 style="
+                                                     margin-bottom: 18px;
+                                                     font-size: 16px;
+                                                     line-height: 1.6;
+                                                     color: #333;
+                                                 ">
+                                                地址：{$companyInfo.address}<br/>
+                                                联系电话：{$companyInfo.phone}
+                                            </div>
+
+                                            <img src="__STATIC__/upload/201902/address.png"
+                                                 alt="公司地图"
+                                                 class="img_none1"
+                                                 style="
+                                                     max-width: 100%;
+                                                     height: auto;
+                                                     border-radius: 8px;
+                                                     display: block;
+                                                     margin: 0 auto;
+                                                 ">
+                                        </div>
+
+<!--                    <div id="allmap"></div>-->
+<!--                    <link rel="stylesheet"
                           href="https://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css">
                     <script type="text/javascript"
                             src="https://api.map.baidu.com/api?v=2.0&ak=fkeIKYDMV08HZfQMeBud7GK0o7vzGlv1"></script>
@@ -117,7 +152,7 @@
                             map.addControl(overView);          //添加默认缩略地图控件
                             map.addControl(overViewOpen);      //右下角，打开
                         }
-                    </script>
+                    </script>-->
                 </div>
             </div>
         </qimi_article>
