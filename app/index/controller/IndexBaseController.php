@@ -25,7 +25,7 @@ class IndexBaseController extends BaseController
     protected $id = "";             //当前页面ID（仅详情页有）
     protected $companyInfo = [      //公司信息
         'name' => '宜兴市鼎德新材料有限公司',
-        'phone' => '13701534028、13506156526',
+        'phone' => '13701534028',
         'email' => 'dingde66@163.com 、2947377123@qq.com',
         'keywords' => '导电纤维|导电纱线',
         'address' => '江苏省宜兴市和桥镇北渠村菜庄25号',
